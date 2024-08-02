@@ -6,8 +6,8 @@ public class ServiceImpl implements ServiceInterface {
 
 
 
-
-    public void check(String login, String password, String confirmPassword) throws WrongLoginException {
+@Override
+    public void check(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException, ExceptionDueToBlankFields {
         int lengthLogin = login.length();
         boolean check2 = (lengthLogin <= 20) ;
 
@@ -27,9 +27,12 @@ public class ServiceImpl implements ServiceInterface {
             throw new ExceptionDueToBlankFields();
         }
 
-        if (password != confirmPassword || !password.matches(RegExps.PASSWORD_REGEXP) || !check3 )  {
+        if (!password.equals(confirmPassword)  || !password.matches(RegExps.PASSWORD_REGEXP) || !check3 )  {
             throw new WrongPasswordException();
         }
+
+
+
 
 
 

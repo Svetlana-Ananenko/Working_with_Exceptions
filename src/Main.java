@@ -7,12 +7,9 @@ import java.sql.SQLOutput;
 public class Main {
     public static void main(String[] args) {
 
-
         String  login = "JAVA_2024";
         String password = "55_go";
         String confirmPassword = "55_go";
-
-
 
         ServiceImpl service = new ServiceImpl();
         try {
@@ -26,9 +23,6 @@ public class Main {
         } finally {
             System.out.println("Работа метода service окончена");
         }
-
-
-
 
 
 
